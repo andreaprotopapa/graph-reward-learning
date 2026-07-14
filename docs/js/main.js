@@ -23,19 +23,36 @@ function renderAuthors() {
   if (!container) return;
   container.innerHTML = project.authors.map((author) => {
     const suffix = author.equal ? "*" : "";
-    const label = `${author.name}${suffix}`;
+    const mark = author.mark ? `<sup>${author.mark}</sup>` : "";
+    const label = `${author.name}${mark}${suffix}`;
     return author.url ? `<a href="${author.url}" target="_blank" rel="noopener">${label}</a>` : label;
   }).join(", ");
   if (project.authors.some((a) => a.equal)) container.innerHTML += "<br><span class='affiliation'>* Equal contribution</span>";
 }
 
+function renderAffiliations() {
+  const el = $("#affiliation");
+  if (!el) return;
+  const affiliations = project.affiliations || [];
+  if (affiliations.length) {
+    el.innerHTML = affiliations.map((item) =>
+      `<span><sup>${item.mark}</sup> ${item.text}</span>`
+    ).join("<br>");
+    return;
+  }
+  el.textContent = project.affiliation || "";
+}
+
 function renderLinks() {
   const linkRow = $("#links");
   if (!linkRow) return;
-  const links = (project.links || []).filter((link) => link.url);
-  linkRow.innerHTML = links.map((link) =>
-    `<a class="button ${link.primary ? "primary" : ""}" href="${link.url}" target="_blank" rel="noopener">${link.label}</a>`
-  ).join("");
+  const links = (project.links || []).filter((link) => link.url || link.comingSoon);
+  linkRow.innerHTML = links.map((link) => {
+    if (link.url) {
+      return `<a class="button ${link.primary ? "primary" : ""}" href="${link.url}" target="_blank" rel="noopener">${link.label}</a>`;
+    }
+    return `<span class="button button-soon ${link.primary ? "primary" : ""}" aria-disabled="true">${link.label} — Coming soon</span>`;
+  }).join("");
 }
 
 function renderHero() {
@@ -49,6 +66,32 @@ function renderHero() {
   container.innerHTML = hero.type === "video"
     ? `<video controls playsinline preload="metadata" poster="${hero.poster || ""}"><source src="${hero.src}">Your browser does not support the video tag.</video>`
     : `<img src="${hero.src}" alt="${hero.alt || project.title}">`;
+  setText("#hero-caption", hero.caption || "");
+}
+
+function renderMethod() {
+  const el = $("#method-content");
+  const method = project.method;
+  if (!el || !method?.src) return;
+  el.innerHTML = `
+    <article class="figure-card">
+      <img src="${method.src}" alt="${method.alt || method.title || "Method"}">
+      <p class="figure-caption">${method.caption || ""}</p>
+    </article>
+  `;
+}
+
+function renderResults() {
+  const el = $("#results-gallery");
+  if (!el) return;
+  const items = project.results || project.gallery || [];
+  el.innerHTML = items.map((item) => `
+    <article class="gallery-card">
+      <img src="${item.src}" alt="${item.alt || item.title}">
+      <h3>${item.title}</h3>
+      <p>${item.caption}</p>
+    </article>
+  `).join("");
 }
 
 function renderAbstract() {
@@ -64,18 +107,6 @@ function renderHighlights() {
     <article class="highlight-card">
       <h3>${item.title}</h3>
       <p>${item.text}</p>
-    </article>
-  `).join("");
-}
-
-function renderGallery() {
-  const el = $("#gallery");
-  if (!el) return;
-  el.innerHTML = (project.gallery || []).map((item) => `
-    <article class="gallery-card">
-      <img src="${item.src}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p>${item.caption}</p>
     </article>
   `).join("");
 }
@@ -119,7 +150,7 @@ function render() {
   setText("#venue", project.venue);
   setText("#title", project.title);
   setText("#subtitle", project.subtitle);
-  setText("#affiliation", project.affiliation);
+  renderAffiliations();
   setText("#tldr", project.tldr ? `TL;DR: ${project.tldr}` : "");
   setText("#bibtex", project.bibtex);
   setText("#acknowledgements-text", project.acknowledgements);
@@ -129,8 +160,9 @@ function render() {
   renderLinks();
   renderHero();
   renderAbstract();
+  renderMethod();
+  renderResults();
   renderHighlights();
-  renderGallery();
   renderFindings();
   initTheme();
   initCopyBibtex();
