@@ -18,11 +18,9 @@ window.PROJECT = {
     { label: "Video", url: "", primary: false }
   ],
 
-  // No teaser asset shipped yet — set `src` when `hero-media` is uncommented in index.html.
   hero: {
-    type: "video",
-    src: "",
-    poster: "assets/teaser-poster.png",
+    type: "image",
+    src: "assets/teaser-poster.png",
     alt: "Project teaser showing the main idea."
   },
 
