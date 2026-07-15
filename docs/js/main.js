@@ -130,6 +130,24 @@ function initTheme() {
   });
 }
 
+function renderPersonalPage() {
+  const page = project.personalPage;
+  const headerLink = $("#personal-page");
+  const footerEl = $("#footer-personal");
+  if (!page?.url) {
+    if (headerLink) headerLink.style.display = "none";
+    if (footerEl) footerEl.textContent = "";
+    return;
+  }
+  if (headerLink) {
+    headerLink.href = page.url;
+    headerLink.textContent = page.label || "← Home";
+  }
+  if (footerEl) {
+    footerEl.innerHTML = `<a class="footer-home-link" href="${page.url}">${page.footerLabel || page.label || "← Back to personal webpage"}</a>`;
+  }
+}
+
 function initCopyBibtex() {
   const btn = $("#copy-bibtex");
   if (!btn) return;
@@ -164,6 +182,7 @@ function render() {
   renderResults();
   renderHighlights();
   renderFindings();
+  renderPersonalPage();
   initTheme();
   initCopyBibtex();
 }

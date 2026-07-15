@@ -7,7 +7,7 @@ window.PROJECT = {
   subtitle: "",
   venue: "Under review",
   authors: [
-    { name: "Andrea Protopapa", url: "", mark: "1" },
+    { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1" },
     { name: "Davide Buoso", url: "", mark: "1" },
     { name: "Francesca Pistilli", url: "", mark: "1" },
     { name: "Georgia Chalvatzaki", url: "", mark: "2" },
@@ -18,6 +18,12 @@ window.PROJECT = {
     { mark: "2", text: "Technische Universität Darmstadt, Darmstadt, Germany" }
   ],
   contact: "andrea.protopapa@polito.it",
+
+  personalPage: {
+    label: "← Home",
+    footerLabel: "← Back to Andrea Protopapa's homepage",
+    url: "https://andreaprotopapa.github.io/"
+  },
 
   links: [
     { label: "Paper", comingSoon: true, primary: true },

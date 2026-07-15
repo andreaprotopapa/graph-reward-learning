@@ -51,7 +51,37 @@ img, video { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 
-.brand { font-weight: 800; text-decoration: none; }
+.header-start {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.home-link {
+  flex-shrink: 0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+.home-link:hover { color: var(--accent); }
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .nav { display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.95rem; }
 .nav a { text-decoration: none; }
 .nav a:hover { color: var(--accent); }
@@ -174,8 +204,17 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
   border-top: 1px solid var(--border);
 }
 
+.footer-home-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-home-link:hover { text-decoration: underline; }
+
 @media (max-width: 820px) {
   .site-header { align-items: flex-start; }
+  .site-header .brand { display: none; }
   .nav { display: none; }
   .cards-3, .gallery { grid-template-columns: 1fr; }
   .section { margin: 2.7rem 0; }
