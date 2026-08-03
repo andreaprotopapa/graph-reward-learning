@@ -7,15 +7,15 @@ window.PROJECT = {
   subtitle: "",
   venue: "Under review",
   authors: [
-    { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1" },
+    { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1, 2" },
     { name: "Davide Buoso", url: "", mark: "1" },
     { name: "Francesca Pistilli", url: "", mark: "1" },
     { name: "Georgia Chalvatzaki", url: "", mark: "2" },
     { name: "Giuseppe Averta", url: "", mark: "1" }
   ],
   affiliations: [
-    { mark: "1", text: "Politecnico di Torino, Turin, Italy" },
-    { mark: "2", text: "Technische Universität Darmstadt, Darmstadt, Germany" }
+    { mark: "1", text: "Visual and Multimodal Applied Learning Lab (VANDAL), Politecnico di Torino, Turin, Italy" },
+    { mark: "2", text: "Interactive Robot Perception & Learning (PEARL) Lab, TU Darmstadt, Darmstadt, Germany" }
   ],
   contact: "andrea.protopapa@polito.it",
 
