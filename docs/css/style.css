@@ -213,6 +213,16 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
   margin: 0 0 1.75rem;
 }
 
+.footer-logos a {
+  display: inline-flex;
+  line-height: 0;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.footer-logos a:hover { opacity: 0.75; }
+
 .footer-logos img {
   height: 3.25rem;
   width: auto;
@@ -220,10 +230,16 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
   object-fit: contain;
 }
 
-[data-theme="dark"] .footer-logos img {
+[data-theme="dark"] .footer-logos a {
   background: #ffffff;
   border-radius: 10px;
   padding: 0.35rem 0.55rem;
+}
+
+[data-theme="dark"] .footer-logos img {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   box-sizing: content-box;
 }
 
