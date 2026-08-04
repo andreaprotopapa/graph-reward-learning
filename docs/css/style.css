@@ -269,7 +269,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
 
 @media (max-width: 820px) {
   .site-header { align-items: flex-start; }
-  .site-header .brand { display: none; }
   .nav { display: none; }
   .cards-3, .gallery { grid-template-columns: 1fr; }
   .section { margin: 2.7rem 0; }
