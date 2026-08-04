@@ -7,7 +7,7 @@ window.PROJECT = {
   subtitle: "",
   venue: "Under review",
   authors: [
-    { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1, 2" },
+    { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1" },
     { name: "Davide Buoso", url: "", mark: "1" },
     { name: "Francesca Pistilli", url: "", mark: "1" },
     { name: "Georgia Chalvatzaki", url: "", mark: "2" },

@@ -186,7 +186,15 @@ function render() {
   setText("#tldr", project.tldr ? `TL;DR: ${project.tldr}` : "");
   setText("#bibtex", project.bibtex);
   setText("#acknowledgements-text", project.acknowledgements);
-  setText("#contact", project.contact ? `Questions? Contact: ${project.contact}` : "");
+  const contactEl = $("#contact");
+  if (contactEl) {
+    if (project.contact) {
+      contactEl.innerHTML = `Questions? Contact: <a href="mailto:${project.contact}">${project.contact}</a>`;
+    } else {
+      console.warn("project.contact is missing");
+      contactEl.textContent = "";
+    }
+  }
 
   renderAuthors();
   renderLinks();

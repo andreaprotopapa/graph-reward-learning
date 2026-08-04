@@ -251,6 +251,14 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
 
 .footer-home-link:hover { text-decoration: underline; }
 
+.footer #contact a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer #contact a:hover { text-decoration: underline; }
+
 .back-to-top {
   position: fixed;
   right: 1.25rem;
