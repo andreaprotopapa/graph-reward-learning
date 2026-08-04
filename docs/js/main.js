@@ -158,6 +158,20 @@ function initCopyBibtex() {
   });
 }
 
+function initBackToTop() {
+  const btn = $("#back-to-top");
+  if (!btn) {
+    console.warn("Back-to-top button #back-to-top not found");
+    return;
+  }
+  btn.hidden = false;
+  const toggle = () => {
+    btn.classList.toggle("is-visible", window.scrollY > 400);
+  };
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
+}
+
 function render() {
   document.title = project.title;
   setMeta("description", project.seo?.description || project.tldr);
@@ -185,6 +199,7 @@ function render() {
   renderPersonalPage();
   initTheme();
   initCopyBibtex();
+  initBackToTop();
 }
 
 render();
