@@ -214,9 +214,9 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monos
 }
 
 .footer-logos img {
-  height: 2.5rem;
+  height: 3.25rem;
   width: auto;
-  max-width: 10rem;
+  max-width: 13rem;
   object-fit: contain;
 }
 
