@@ -72,10 +72,27 @@ function renderHero() {
 function renderMethod() {
   const el = $("#method-content");
   const method = project.method;
-  if (!el || !method?.src) return;
+  if (!el) {
+    console.warn("Method container #method-content not found");
+    return;
+  }
+  if (!method?.src) {
+    console.warn("project.method.src is missing");
+    return;
+  }
+  const mobileSrcs = method.mobileSrcs;
+  if (!Array.isArray(mobileSrcs) || mobileSrcs.length === 0) {
+    console.warn("project.method.mobileSrcs is missing or empty");
+    return;
+  }
+  const alt = method.alt || method.title || "Method";
+  const mobileImgs = mobileSrcs.map((src, i) =>
+    `<img src="${src}" alt="${alt} (part ${i + 1})">`
+  ).join("");
   el.innerHTML = `
     <article class="figure-card">
-      <img src="${method.src}" alt="${method.alt || method.title || "Method"}">
+      <img class="method-figure-desktop" src="${method.src}" alt="${alt}">
+      <div class="method-figure-mobile">${mobileImgs}</div>
       <p class="figure-caption">${method.caption || ""}</p>
     </article>
   `;

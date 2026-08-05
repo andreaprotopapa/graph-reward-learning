@@ -41,6 +41,7 @@ window.PROJECT = {
   method: {
     title: "Method",
     src: "assets/method_1.png",
+    mobileSrcs: ["assets/method_2.png", "assets/method_3.png"],
     alt: "GORDON pipeline from demo videos to dense reward and subtask discovery.",
     caption:
       "Demo videos are converted into object-centric graphs and encoded with a GNN trained using temporal cycle-consistency and reconstruction losses. The frozen encoder defines a dense reward by measuring latent-space distance to the demonstration goal. This reward supports policy learning directly in short-horizon tasks and can reveal stage-wise structure for subtask discovery in long-horizon tasks."
