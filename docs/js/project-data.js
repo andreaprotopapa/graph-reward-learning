@@ -26,7 +26,7 @@ window.PROJECT = {
   },
 
   links: [
-    { label: "Paper", comingSoon: true, primary: true },
+    { label: "Paper", url: "https://arxiv.org/abs/2608.03753", icon: "arxiv" },
     { label: "Code", comingSoon: true, primary: false }
   ],
 
@@ -50,27 +50,64 @@ window.PROJECT = {
   results: [
     {
       title: "Short-horizon tasks",
-      src: "assets/short_horizon_results.png",
-      alt: "Short-horizon reinforcement learning results with GORDON rewards.",
+      plot: {
+        src: "assets/short_horizon_success.png",
+        alt: "Short-horizon success rates with GORDON rewards."
+      },
+      gifs: [
+        { src: "assets/short_horizon_gifs/matchregions.gif", alt: "MatchRegions task rollout." },
+        { src: "assets/short_horizon_gifs/umbrella.gif", alt: "Umbrella task rollout." },
+        { src: "assets/short_horizon_gifs/rubbish.gif", alt: "Rubbish task rollout." }
+      ],
       caption: "Learned rewards transfer directly to RL for short-horizon tasks."
     },
     {
       title: "Long-horizon reward profiles",
-      src: "assets/long_horizon_results_reward.png",
-      alt: "Full-task reward profiles on long-horizon manipulation tasks.",
+      gifs: [
+        {
+          src: "assets/long_horizon_gifs/drawer_reward.gif",
+          label: "PlaceItemInDrawer",
+          alt: "PlaceItemInDrawer reward profile."
+        },
+        {
+          src: "assets/long_horizon_gifs/shoesin_reward.gif",
+          label: "PutShoesInBox",
+          alt: "PutShoesInBox reward profile."
+        },
+        {
+          src: "assets/long_horizon_gifs/shoesout_reward.gif",
+          label: "PutShoesOutBox",
+          alt: "PutShoesOutBox reward profile."
+        },
+        {
+          src: "assets/long_horizon_gifs/container_reward.gif",
+          label: "EmptyContainer",
+          alt: "EmptyContainer reward profile."
+        }
+      ],
+      gifsLayout: "row",
       caption:
         "Learned full-task reward profiles on long-horizon tasks. Without subtask labels, the learned reward exhibits stage-wise transitions aligned with semantic progress."
     },
     {
       title: "Long-horizon policy results",
-      src: "assets/long_horizon_results_policy.png",
-      alt: "Long-horizon policy success rates with automatic subtask discovery.",
+      plot: {
+        src: "assets/long_horizon_success.png",
+        alt: "Long-horizon policy success rates with automatic subtask discovery."
+      },
+      gifs: [
+        { src: "assets/long_horizon_gifs/drawer.gif", alt: "Drawer task rollout." },
+        { src: "assets/long_horizon_gifs/shoesin.gif", alt: "ShoesIn task rollout." },
+        { src: "assets/long_horizon_gifs/shoesout.gif", alt: "ShoesOut task rollout." },
+        { src: "assets/long_horizon_gifs/container.gif", alt: "Container task rollout." }
+      ],
+      gifsLayout: "grid",
       caption:
         "Long-horizon policy results: subtask discovery enables full-task success with a +25.4 p.p. average success-rate gain over the strongest baseline."
     }
   ],
 
-  tldr: "",
+  tldr: "GORDON learns dense object-centric rewards from action-free video demonstrations and automatically discovers subtasks for long-horizon manipulation.",
 
   abstract: [
     "Learning long-horizon manipulation skills with reinforcement learning remains challenging due to the complexity of reward design, the limited guidance of sparse rewards, and the high cost of manual subtask annotation. Visual demonstrations can provide supervision for reward learning, but rewards learned from raw pixels can be brittle and sensitive to visual variation, background appearance, and robot motion.",
