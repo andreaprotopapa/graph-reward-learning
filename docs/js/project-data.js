@@ -5,7 +5,7 @@
 window.PROJECT = {
   title: "GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation",
   subtitle: "",
-  venue: "Under review",
+  venue: "",
   authors: [
     { name: "Andrea Protopapa", url: "https://andreaprotopapa.github.io/", mark: "1" },
     { name: "Davide Buoso", url: "", mark: "1" },
@@ -116,10 +116,12 @@ window.PROJECT = {
   ],
 
   bibtex: `@misc{protopapa2026gordon,
-  title  = {GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation},
-  author = {Protopapa, Andrea and Buoso, Davide and Pistilli, Francesca and Chalvatzaki, Georgia and Averta, Giuseppe},
-  year   = {2026},
-  note   = {Under review}
+  title         = {GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation},
+  author        = {Protopapa, Andrea and Buoso, Davide and Pistilli, Francesca and Chalvatzaki, Georgia and Averta, Giuseppe},
+  year          = {2026},
+  eprint        = {2608.03753},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
 }`,
 
   acknowledgements: "Optional acknowledgements, funding, grants, or institutional notes.",

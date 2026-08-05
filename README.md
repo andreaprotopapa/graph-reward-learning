@@ -7,7 +7,7 @@
 ¹ Politecnico di Torino, Turin, Italy  
 ² Technische Universität Darmstadt, Darmstadt, Germany
 
-**Status:** Under review
+**Status:** arXiv preprint
 
 This repository presents "GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation".
 
