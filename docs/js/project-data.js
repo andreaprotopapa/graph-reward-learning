@@ -126,6 +126,6 @@ window.PROJECT = {
 
   seo: {
     description: "GORDON learns dense object-centric rewards from action-free video demonstrations and automatically discovers subtasks for long-horizon manipulation.",
-    image: "assets/social-preview.png"
+    image: "https://andreaprotopapa.github.io/graph-reward-learning/assets/social-preview.png"
   }
 };
