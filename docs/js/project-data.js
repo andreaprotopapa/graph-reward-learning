@@ -115,13 +115,11 @@ window.PROJECT = {
     "In long-horizon tasks, the temporal profile of this reward reveals stage-wise object-state transitions, enabling automatic subtask discovery without manual segmentation. The discovered segments are then used to train subtask-specific rewards and specialized policies that are composed sequentially. Experiments on seven manipulation tasks on MAGICAL and ManiSkill3 benchmarks show that our object-centric reward improves reinforcement learning in short-horizon settings and enables successful policy learning in complex long-horizon tasks through automatic decomposition, achieving an average success rate of 74.4% across the long-horizon tasks (on average approx. +35 p.p. vs. best learned baseline and approx. +25 p.p. vs. oracle). Code and task implementations will be released upon acceptance."
   ],
 
-  bibtex: `@misc{protopapa2026gordon,
-  title         = {GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation},
-  author        = {Protopapa, Andrea and Buoso, Davide and Pistilli, Francesca and Chalvatzaki, Georgia and Averta, Giuseppe},
-  year          = {2026},
-  eprint        = {2608.03753},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.RO}
+  bibtex: `@article{protopapa2026gordon,
+  title={GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation},
+  author={Protopapa, Andrea and Buoso, Davide and Pistilli, Francesca and Chalvatzaki, Georgia and Averta, Giuseppe},
+  journal={arXiv preprint arXiv:2608.03753},
+  year={2026}
 }`,
 
   acknowledgements: "Optional acknowledgements, funding, grants, or institutional notes.",
